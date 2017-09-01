@@ -1,0 +1,14 @@
+<% require 'email_munger' %>
+<tr>
+  <td><%= admin.last_name %></td>
+  <td><%= admin.first_name %></td>
+  <td>
+  <% if admin.super == true  %>
+    Y
+  <% else %>
+    N
+  <% end %>
+  </td>
+  <td><%= link_to admin.username, admin %></td>
+  <td><%= link_to raw(EmailMunger.encode(admin.email)), admin %></td>
+</tr>

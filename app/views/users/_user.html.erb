@@ -1,0 +1,7 @@
+<% require 'email_munger' %>
+<tr>
+  <td><%= user.last_name %></td>
+  <td><%= user.first_name %></td>
+  <td><%= link_to user.username, user %></td>
+  <td><%= link_to raw(EmailMunger.encode(user.email)), user %></td>
+</tr>

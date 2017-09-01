@@ -1,0 +1,67 @@
+# BEGIN: AllCops
+AllCops:
+  Exclude:
+    - bin/setup
+    - bin/spring
+    - bin/yarn
+    - config/spring.rb
+    - db/migrate/*
+    - db/schema.rb
+    - mod*
+    - mod/*
+    - mod/*/*
+    - tmp/vulnerabilities/*
+    - tmp/vulnerabilities/lib/*
+    - tmp/vulnerabilities/spec/*
+# END: AllCops
+
+Bundler/OrderedGems:
+  Exclude:
+    - Gemfile
+
+# BEGIN: Metrics/LineLength
+Metrics/LineLength:
+  Exclude:
+    - config/application.rb
+    - config/environments/development.rb
+    - config/environments/production.rb
+    - config/initializers/assets.rb
+    - config/initializers/backtrace_silencers.rb
+    - config/initializers/new_framework_defaults.rb
+    - config/initializers/session_store.rb
+    - config/initializers/wrap_parameters.rb
+    - config/environments/production.rb
+    - config/environments/test.rb
+    - config/puma.rb
+    - config/routes.rb
+    - db/seeds.rb
+    - Gemfile
+    - Rakefile
+    - test/integration/*
+    - test/test_helper.rb
+    - config/initializers/devise.rb
+# END: Metrics/LineLength
+
+# BEGIN: Style/ClassAndModuleChildren
+Style/ClassAndModuleChildren:
+  Exclude:
+    - test/test_helper.rb
+    - app/controllers/users/*
+    - app/controllers/admins/*
+# END: Style/ClassAndModuleChildren
+
+# BEGIN: Style/SymbolArray
+Style/SymbolArray:
+  Exclude:
+    - Gemfile
+    - app/controllers/users/registrations_controller.rb
+    - app/controllers/admins/registrations_controller.rb
+    - config/routes.rb
+    - config/routes.rb
+# END: Style/SymbolArray
+
+# BEGIN: Layout/TrailingWhitespace
+Layout/TrailingWhitespace:
+  Exclude:
+    - config/routes.rb
+# END: Layout/TrailingWhitespace

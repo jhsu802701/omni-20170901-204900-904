@@ -1,0 +1,29 @@
+<% provide(:title, 'User Index') %>
+
+<br><br>
+
+<%= search_form_for @search, url: search_users_path, method: :post do |f| %>
+  <%= f.condition_fields do |c| %>
+    <%= render "condition_fields", f: c %>
+  <% end %>
+  <p><%= link_to_add_fields "Add Conditions", f, :condition %></p>
+  <div class="field">
+    Sort:
+    <%= f.sort_fields do |s| %>
+      <%= s.sort_select %>
+    <% end %>
+  </div>
+  <div class="actions"><%= f.submit "Search" %></div>
+<% end %>
+<h1>User Index</h1>
+<%= will_paginate %>
+<table class="users">
+  <tr>
+    <td><b>Last Name</b></td>
+    <td><b>First Name</b></td>
+    <td><b>Username</b></td>
+    <td><b>Email</b></td>
+  </tr>
+  <%= render @users %>
+</table>
+<%= will_paginate %>

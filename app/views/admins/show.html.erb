@@ -1,0 +1,23 @@
+<% require 'email_munger' %>
+
+<% provide(:title, "Admin: #{@admin.first_name} #{@admin.last_name}") %>
+<div class="row">
+  <section class="admin_info">
+    <h1>
+    Admin: <%= @admin.first_name %> <%= @admin.last_name %>
+    </h1>
+    Username: <%= @admin.username %>
+    <br>
+    Email: <%= raw(EmailMunger.encode(@admin.email)) %>
+    <br>
+    <% # BEGIN: delete button %>
+    <br>
+    <% if @admin.super != true && current_admin.super == true %>
+      <%= link_to "Delete", @admin, method: :delete,
+                            data: { confirm: "Are you sure you wish to delete this admin?" },
+                            class: "btn btn-lg btn-primary"
+      %>
+    <% end %>
+    <% # END: delete button %>
+  </section>
+</div>

@@ -1,0 +1,27 @@
+<% provide(:title, '') %>
+
+<div class="center jumbotron">
+  <h1>Home</h1>
+  Welcome to Temporary OmniAuth App!
+  <br><br>
+  <% # BEGIN: VARIABLE SECTION %>
+  <% if user_signed_in? %>
+    <% # BEGIN: USER SECTION %>
+    You are logged in as a user (<%= current_user.username %>).
+    <% # END: USER SECTION %>
+  <% elsif admin_signed_in? %>
+    <% # BEGIN: ADMIN SECTION %>
+    You are logged in as an admin (<%= current_admin.username %>).
+    <% # END: ADMIN SECTION %>
+  <% else %>
+    <% # BEGIN: GENERAL PUBLIC %>
+    <div class="center jumbotron">
+      <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+    </div>
+    <% # END: GENERAL PUBLIC %>
+  <% end %>
+  <% # END: VARIABLE SECTION %>
+  <br><br>
+  <%= link_to image_tag("rails.png", alt: "Rails logo"),
+              'http://rubyonrails.org/' %>
+</div>
