@@ -1,3 +1,7 @@
+[![CircleCI](https://circleci.com/gh/jhsu802701/omni-20170901-204900-904.svg?style=svg)](https://circleci.com/gh/jhsu802701/omni-20170901-204900-904)
+[![Dependency Status](https://gemnasium.com/badges/github.com/jhsu802701/omni-20170901-204900-904.svg)](https://gemnasium.com/github.com/jhsu802701/omni-20170901-204900-904)
+[![security](https://hakiri.io/github/jhsu802701/omni-20170901-204900-904/master.svg)](https://hakiri.io/github/jhsu802701/omni-20170901-204900-904/master)
+[![Code Climate](https://codeclimate.com/github/jhsu802701/omni-20170901-204900-904/badges/gpa.svg)](https://codeclimate.com/github/jhsu802701/omni-20170901-204900-904)
 
 # Temporary OmniAuth App
 
