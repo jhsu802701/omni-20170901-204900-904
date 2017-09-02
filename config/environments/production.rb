@@ -91,7 +91,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Mailgun settings
-  config.action_mailer.default_url_options = { host: 'omni-20170901-204900-904.heroku.com' }
+  config.action_mailer.default_url_options = { host: 'omni-20170901-204900-904.herokuapp.com' }
   config.action_mailer.smtp_settings = {
     port: ENV['MAILGUN_SMTP_PORT'],
     address: ENV['MAILGUN_SMTP_SERVER'],
