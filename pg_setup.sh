@@ -18,21 +18,7 @@ anti_blank () {
 # BEGIN: setting PostgreSQL database name parameters (db_root, db_dev, db_test, db_pro)
 #######################################################################################
 
-dir_root=${PWD##*/} # This directory
-db_root_def="db_generic_${n}" # Default root name of database
-echo '*******************************'
-echo 'SELECTING POSTGRESQL PARAMETERS'
-echo
-echo 'NOTE: Use letters, numbers, and underscores in parameter names.'
-echo 'Hyphens are prohibited.'
-echo
-echo "Default database root name: ${db_root_def}"
-echo "Default database name (development): ${db_root_def}_dev"
-echo "Default database name (testing): ${db_root_def}_test"
-echo "Default database name (production): ${db_root_def}_pro"
-echo 'Enter your desired database root name:'
-read db_root_sel
-db_root=$(anti_blank $db_root_sel $db_root_def)
+db_root='db_omni_20170901_204900_904'
 
 db_dev="${db_root}_dev"
 db_test="${db_root}_test"
@@ -46,15 +32,7 @@ db_pro="${db_root}_pro"
 # BEGIN: setting names of environment variables (env_var_username, env_var_password)
 ####################################################################################
 
-env_var_root_def="var_${db_root}"
-echo
-echo 'Default environmental variable names'
-echo "Username: ${env_var_root_def}_username"
-echo "Password: ${env_var_root_def}_password"
-echo 'Enter your desired root name for the environmental variables'
-echo 'that store your database username and password:'
-read env_var_root_sel
-env_var_root=$(anti_blank $env_var_root_sel $env_var_root_def)
+env_var_root="var_${db_root}"
 
 env_var_username="${env_var_root}_username"
 env_var_password="${env_var_root}_password"
@@ -104,16 +82,3 @@ echo 'bundle install'
 bundle install # Needed to run pg_setup.rb
 
 ruby pg_setup.rb $db_dev $db_test $db_pro $env_var_username $env_var_password $db_username $db_password
-
-########################################
-# BEGIN: DELETE THIS SECTION (REDUNDANT)
-########################################
-sh git_check.sh
-echo '**************************************************'
-echo 'Delete the last section of the pg_setup.sh script.'
-echo 'Press Enter to continue.'
-echo '************************'
-read continue
-######################################
-# END: DELETE THIS SECTION (REDUNDANT)
-######################################
